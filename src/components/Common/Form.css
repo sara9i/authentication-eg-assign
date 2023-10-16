@@ -1,0 +1,46 @@
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 21px;
+  border-radius: 20px;
+}
+
+.grey-section {
+  padding: 1em 2em 1em 2em;
+  border-radius: 0.5em;
+  background-color: #f7f7f7;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  width: 100%;
+}
+
+.ant-modal-content {
+  width: 180%;
+}
+
+.ant-space-item {
+  margin-right: 8px;
+  width: 100%;
+}
+
+.ant-space.ant-space-horizontal.ant-space-align-baseline {
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.ant-space-item-icon {
+  width: 10%;
+}
+
+.ant-input-number {
+  width: 100%;
+}
+
+.ant-col.ant-col-10.ant-form-item-label {
+  max-width: 15%;
+}
+
+.ant-col.ant-col-7.ant-form-item-label {
+  max-width: 20%;
+}

@@ -1,0 +1,56 @@
+$max-mobile-width: 425px;
+$tablet-width: 768px;
+$desktop-width: 1200px;
+$large-desktop-width: 2500px;
+$custom-mid-width: 500px;
+
+@mixin for-tablet {
+  @media only screen and (min-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin for-desktop {
+  @media only screen and (min-width: $desktop-width) {
+    @content;
+  }
+}
+
+@mixin for-large-desktop {
+  @media only screen and (min-width: $large-desktop-width) {
+    @content;
+  }
+}
+
+@mixin fontTitle($f-size, $color) {
+  font-size: $f-size;
+  font-family: $font-title;
+  color: $color;
+  font-weight: 800;
+}
+
+@mixin fontRegular($f-size, $color) {
+  font-size: $f-size;
+  font-family: $font-regular;
+  color: $color;
+}
+
+
+@mixin fontMetricTitle($f-size, $color) {
+  font-size: $f-size;
+  font-family: $font-metric-title;
+  color: $color;
+  font-weight: 800;
+}
+
+@mixin fontMetricRegular($f-size, $color) {
+  font-size: $f-size;
+  font-family: $font-metric-regular;
+  color: $color;
+}
+
+@mixin fontRegularPoppins($f-size, $color) {
+  font-size: $f-size;
+  font-family: $font-poppins;
+  color: $color;
+}

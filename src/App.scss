@@ -1,0 +1,35 @@
+@import './styles/all.scss';
+
+.c-App {
+  .mobile-only {
+    display: block;
+
+    @include for-desktop {
+      display: none;
+    }
+  }
+
+  .desktop-only {
+    display: none;
+
+    @include for-desktop {
+      display: block;
+    }
+  }
+}
+
+.userback-button-container {
+  display: flex !important;
+}
+
+.userback-button {
+  display: none !important;
+}
+
+.nested-list-item {
+  list-style-type: none !important;
+}
+.nested-list-item:before,
+.nested-list-item:after {
+  display: none !important;
+}

@@ -1,0 +1,67 @@
+@import '../../styles/all.scss';
+
+.c-AuthPage {
+  .c-Card {
+    width: 100%;
+    padding: 80px 0;
+    box-shadow: none;
+
+    @include for-desktop {
+      width: 600px;
+      position: fixed;
+      top: 50%;
+      transform: translate(0, -50%);
+      right: 60px;
+      vertical-align: center;
+      box-shadow: 0 3px 28px rgba(0, 0, 0, 0.08);
+      z-index: 10;
+      background: $bright-white;
+    }
+  }
+
+  .c-Button {
+    width: 348px;
+  }
+  &__container {
+    position: relative;
+  }
+  &__background__wrapper {
+    display: none;
+
+    @include for-desktop {
+      display: initial;
+      position: fixed;
+      top: 52%;
+      transform: translate(0, -50%);
+      left: 0;
+
+      .c-Image {
+        height: 800px;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__logo__wrapper {
+    width: 326px;
+    height: 26px;
+    margin: 32px auto 8px auto;
+    text-align: center;
+
+    .c-Image {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__subtext {
+    @include fontTitle(12px, $dark-text);
+    text-align: center;
+    margin: 0 0 63px 0;
+
+    @include for-desktop {
+      font-size: 14px;
+    }
+  }
+
+}

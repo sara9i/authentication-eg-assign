@@ -1,0 +1,39 @@
+@import '../../styles/all.scss';
+
+.c-Navbar {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  width: auto;
+  height: 70px;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  border-bottom: 1px solid #eee;
+  padding: 0 1rem;
+  z-index: 100;
+  justify-content: space-between;
+
+  @include for-desktop {
+    padding: 10px 2.5rem;
+    width: 100%;
+  }
+
+  &__logo {
+    width: 8rem;
+
+    @include for-desktop {
+      width: 14rem;
+    }
+  }
+
+  &__logo__wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__button {
+    float: right;
+  }
+}
