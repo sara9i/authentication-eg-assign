@@ -11,12 +11,10 @@
   align-items: center;
   flex-direction: row;
   border-bottom: 1px solid #eee;
-  padding: 0 1rem;
   z-index: 100;
   justify-content: space-between;
 
   @include for-desktop {
-    padding: 10px 2.5rem;
     width: 100%;
   }
 
