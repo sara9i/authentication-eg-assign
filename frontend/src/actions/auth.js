@@ -63,15 +63,15 @@ export const startSignUp = (email, password, confirmPassword, token) => {
         );
       } else {
         axios
-          .post(`${baseURL}/api/v1/sign-up`, dt, {
+          .post(`${baseURL}/auth/signup`, dt, {
             withCredentials: true
           })
           .then((response) => {
-            const { token, refresh_token, user } = response.data;
+            const { token, refreshToken, user } = response.data;
 
             // Set user data
             Auth.authenticateUser(user, token);
-            Auth.setTokens(token, refresh_token);
+            Auth.setTokens(token, refreshToken);
 
             dispatch(setUser(user));
 
@@ -113,16 +113,16 @@ export const startLogin = (email, password, currentRoute) => {
     dispatch(setLoading(true));
 
     axios
-      .post(`${baseURL}/api/v1/log-in`, dt, {
+      .post(`${baseURL}/auth/login`, dt, {
         withCredentials: true
       })
       .then((response) => {
-        const { token, refresh_token } = response.data;
+        const { token, refreshToken } = response.data;
         const { user } = response.data;
 
         // Set user data
         _authenticationPromise(
-          _postLoginProcess(user, token, refresh_token, dispatch)
+          _postLoginProcess(user, token, refreshToken, dispatch)
         ).then(() => {
           dispatch(setLoginFailed(false));
           dispatch(login(user._id, user));
@@ -142,18 +142,18 @@ export const startLogin = (email, password, currentRoute) => {
   };
 };
 
-export const getTokensService = (payload) => {
-  return axios
-    .post(`${baseURL}/api/v1/get-token`, payload, {
-      withCredentials: true
-    })
-    .then((response) => {
-      const { token, refresh_token } = response.data;
-      Auth.setTokens(token, refresh_token);
-      Auth.deleteUriTokens(token);
-      return response;
-    });
-};
+// export const getTokensService = (payload) => {
+//   return axios
+//     .post(`${baseURL}/auth/gettoken`, payload, {
+//       withCredentials: true
+//     })
+//     .then((response) => {
+//       const { token, refreshToken } = response.data;
+//       Auth.setTokens(token, refreshToken);
+//       Auth.deleteUriTokens(token);
+//       return response;
+//     });
+// };
 
 /**
  * Payload should send either authToken or refreshToken
@@ -163,25 +163,24 @@ export const getTokensService = (payload) => {
  * @param {*} currentRoute
  * @returns Promise
  */
-// export const startGetTokens = (socialToken, currentRoute) => {
-export const startGetTokens = (payload, currentRoute) => {
-  return (dispatch) => {
-    dispatch(setLoading(true));
+// export const startGetTokens = (payload, currentRoute) => {
+//   return (dispatch) => {
+//     dispatch(setLoading(true));
 
-    getTokensService(payload)
-      .then((response) => {
-        const { token, refresh_token } = response.data;
+//     getTokensService(payload)
+//       .then((response) => {
+//         const { token, refreshToken } = response.data;
 
-        Auth.setTokens(token, refresh_token);
-        dispatch(setLoading(false));
-        dispatch(startLoginCheck(token, refresh_token, currentRoute));
-      })
-      .catch((err) => {
-        console.log(err);
-        dispatch(setLoading(false));
-      });
-  };
-};
+//         Auth.setTokens(token, refreshToken);
+//         dispatch(setLoading(false));
+//         dispatch(startLoginCheck(token, refreshToken, currentRoute));
+//       })
+//       .catch((err) => {
+//         console.log(err);
+//         dispatch(setLoading(false));
+//       });
+//   };
+// };
 
 export const startLoginCheck = (token, currentRoute, email = '') => {
   return (dispatch) => {
