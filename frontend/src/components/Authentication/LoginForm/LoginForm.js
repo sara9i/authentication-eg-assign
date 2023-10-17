@@ -8,7 +8,7 @@ import { loginFormSchema } from '../../../pages/Auth/constants';
 import { validate } from '../../../utilities/validationHelper';
 import '../AuthForm.scss';
 
-const className = 'c-LoginForm';
+const className = 'c-AuthForm';
 
 const LoginForm = (props) => {
   let [form] = Form.useForm();

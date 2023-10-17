@@ -4,7 +4,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { startSignUp } from '../../../actions/auth';
-const className = 'c-SignupForm c-Form';
+import '../AuthForm.scss';
+const className = 'c-AuthForm';
 
 function SignupForm(props) {
   let [form] = Form.useForm();

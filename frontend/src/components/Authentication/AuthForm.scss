@@ -1,6 +1,6 @@
 @import '../../styles/all.scss';
 
-.c-Login {
+.c-AuthForm {
   .c-Card {
     width: 100%;
     padding: 80px 0;
@@ -32,7 +32,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: fit-content;
     margin: 0 auto;
 
     input {

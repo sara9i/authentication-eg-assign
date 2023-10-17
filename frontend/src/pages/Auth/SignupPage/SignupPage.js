@@ -24,14 +24,14 @@ const SignupPage = () => {
           </div>
           <div className={`${className}__form__wrapper`}>
             <SignupForm />
-          </div>
-          <div className="mb-24 font-poppins text-label-sm lg:text-label-md">
-            <span className="text-light-text text-grey-neutral50">
-              Already a member?{' '}
-            </span>
-            <span className="underline">
-              <Link to="/login">Login</Link>
-            </span>
+            <div className="mb-24 font-poppins text-label-sm lg:text-label-md">
+              <span className="text-light-text text-grey-neutral50">
+                Already a member?{' '}
+              </span>
+              <span className="underline">
+                <Link to="/login">Login</Link>
+              </span>
+            </div>
           </div>
         </Card>
       </div>
