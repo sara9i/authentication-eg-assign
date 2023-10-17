@@ -13,6 +13,9 @@ $ npm i
 
 ### Running the app
 
+* Note: Add .env at the root of dirrectory with evoirnment variables to successfully run the app locally. See [sample env](https://github.com/sara9i/authentication-eg-assign/blob/master/backend/STUB.env) to populate the envoirnment file with required variables
+
+
 ```bash
 # development
 $ npm run start

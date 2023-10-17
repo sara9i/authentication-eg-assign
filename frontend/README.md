@@ -6,7 +6,10 @@ Reactjs Frontend for authentication using [antd design library](https://ant.desi
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 
+
 ### Running the app
+
+* Note: Add .env at the root of dirrectory with evoirnment variables to successfully run the app locally. See [sample env](https://github.com/sara9i/authentication-eg-assign/blob/master/frontend/STUB.env) to populate the envoirnment file with required variables
 
 ```bash
 # development
