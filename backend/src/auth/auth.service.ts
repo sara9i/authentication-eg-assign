@@ -32,7 +32,7 @@ export class AuthService {
       data._id = id;
     }
     const tokens = await this.getTokens(data);
-    await this.updateRefreshToken(id, tokens.refreshToken);
+    // await this.updateRefreshToken(id, tokens.refreshToken);
     return tokens;
   }
 
@@ -47,13 +47,13 @@ export class AuthService {
     const payload = {
       email: newUser.email,
       name: newUser.name,
-      _id: newUser?._id
+      _id: JSON.stringify(newUser?._id)
     };
     const tokens = await this.getTokens(payload);
-    await this.updateRefreshToken(
-      JSON.stringify(newUser._id),
-      tokens.refreshToken
-    );
+    // await this.updateRefreshToken(
+    //   JSON.stringify(newUser._id),
+    //   tokens.refreshToken
+    // );
 
     return {
       accessToken: tokens.accessToken,
@@ -111,7 +111,7 @@ export class AuthService {
     if (!refreshTokenMatches)
       throw new ForbiddenException('Access Denied');
     const tokens = await this.getTokens(user);
-    await this.updateRefreshToken(user.id, tokens.refreshToken);
+    // await this.updateRefreshToken(user.id, tokens.refreshToken);
     return tokens;
   }
   async logout(userId: string) {
