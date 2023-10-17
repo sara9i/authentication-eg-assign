@@ -1,3 +1,4 @@
+import { PoweroffOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
 import { PropTypes } from 'prop-types';
 import React from 'react';
@@ -22,7 +23,14 @@ const NavBar = ({ logoutClick }) => {
         </Link>
       </div>
       <div className={`${className}__button`}>
-        <Button onClick={logoutClick}>Logout</Button>
+        <Button
+          type="primary"
+          danger
+          ghost
+          icon={<PoweroffOutlined />}
+          onClick={logoutClick}>
+          Logout
+        </Button>
       </div>
     </div>
   );
