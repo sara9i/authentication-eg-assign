@@ -1,9 +1,9 @@
 import React from 'react';
 
-const WelcomeNote = () => {
+const WelcomeNote = ({ userName }) => {
   return (
     <React.Fragment>
-      <h1>{'Welcome to the application.'}</h1>
+      <h1>{`Welcome to the application ${userName ?? ''}`}!</h1>
     </React.Fragment>
   );
 };

@@ -11,7 +11,12 @@ function SignupForm(props) {
 
   const signUp = (values) => {
     props.dispatch(
-      startSignUp(values?.email, values?.password, values?.cpassword)
+      startSignUp(
+        values?.name,
+        values?.email,
+        values?.password,
+        values?.cpassword
+      )
     );
   };
 
@@ -24,6 +29,21 @@ function SignupForm(props) {
           remember: true
         }}
         onFinish={signUp}>
+        <Form.Item
+          label="Name"
+          name="name"
+          rules={[
+            {
+              required: true,
+              message: 'Please input your name!'
+            }
+          ]}>
+          <Input
+            placeholder="Name"
+            className={`${className}__email__input`}
+          />
+        </Form.Item>
+
         <Form.Item
           label="Email"
           name="email"

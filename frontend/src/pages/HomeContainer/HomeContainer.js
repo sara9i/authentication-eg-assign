@@ -62,7 +62,7 @@ const HomeContainer = ({ history, dispatch }) => {
           <NavBar logoutClick={logOut} />
           <div className={`${baseClassName}__content-item`}>
             <div className={`${baseClassName}__main-content-area`}>
-              <WelcomeNote></WelcomeNote>
+              <WelcomeNote userName={user?.name}></WelcomeNote>
             </div>
           </div>
         </div>

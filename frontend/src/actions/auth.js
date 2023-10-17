@@ -35,16 +35,22 @@ const _passwordIsStrong = (password) => {
   return strongRegex.test(password);
 };
 
-export const startSignUp = (email, password, confirmPassword, token) => {
+export const startSignUp = (
+  name,
+  email,
+  password,
+  confirmPassword,
+  token
+) => {
   return (dispatch) => {
     dispatch(setLoading(true));
 
     let dt = {};
     // Check token
     if (token) {
-      dt = { email, password, password2: confirmPassword, token };
+      dt = { name, email, password, token };
     } else {
-      dt = { email, password, password2: confirmPassword };
+      dt = { name, email, password };
     }
     if (
       _checkFieldNotEmpty(password) &&
